@@ -119,16 +119,3 @@ flowchart TB
 4. La primaria confirma cambios del expediente. Réplica y caché no deciden una transición que exige el estado actual.
 5. Los trabajos asíncronos tienen identificador, estado, reintentos y recuperación. Se confirma la captura definitiva solo después de verificar su persistencia durable.
 6. Replicación no equivale a copia de seguridad ni garantiza conmutación automática. Alta disponibilidad de gateway, base, cola y caché requiere configuración y pruebas específicas.
-
-## Alternativas y compensaciones
-
-Microservicios aportarían despliegue y escalado por módulo, pero exigirían contratos distribuidos, observabilidad y coordinación de datos adicionales. El volumen estimado no demuestra por sí solo que sean necesarios. Se prefiere empezar con módulos delimitados y medir antes de separar servicios.
-
-El monolito modular simplifica el desarrollo y la operación, pero sus módulos comparten el despliegue y recursos del backend. Caché, réplica y tareas asíncronas agregan complejidad de consistencia y recuperación. La disponibilidad y latencia de AC01-AC03 son metas pendientes de validar, no propiedades garantizadas por el diagrama.
-
-## Referencias
-
-- GUIA-003-ASF.pdf, paso 4 y tarea de la sección VII.
-- Propuesta SIFITUR Huamanga, secciones 1 y 4, componentes HLD y contenedores.
-- [Decisiones arquitectónicas](../analisis-de-sistema/07-decisiones-arquitectonicas.md).
-- [Arquitectura inicial](arquitectura-inicial.md), antecedente del diseño global.
