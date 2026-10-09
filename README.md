@@ -10,4 +10,22 @@ Jean Pool Kenner Palomino Mavila
 Sistema Integral de Fiscalización de Hospedajes y Servicios Turísticos en Huamanga (SIFITUR Huamanga)
 
 ## Curso
-Arquitectura de Software 
+Arquitectura de Software
+
+## Documentación del laboratorio 03
+
+Este repositorio contiene la propuesta documental de SIFITUR Huamanga. Las tecnologías, métricas y diagramas describen el diseño previsto; todavía no existe una aplicación ejecutable ni evidencia de cumplimiento de los objetivos de calidad.
+
+| Entregable | Documento |
+|---|---|
+| Necesidad del negocio | [Problema, objetivos y alcance](analisis-de-sistema/00-necesidad-del-negocio.md) |
+| Requisitos | [Actores](analisis-de-sistema/01-actores.md), [historias de usuario](analisis-de-sistema/02-historias-del-usuario.md), [requisitos funcionales](analisis-de-sistema/03-requisitos-funcionales.md) y [restricciones](analisis-de-sistema/05-restricciones.md) |
+| Atributos de calidad | [Escenarios y objetivos](analisis-de-sistema/04-atributos-de-calidad.md) |
+| Drivers arquitectónicos | [Necesidades que condicionan el diseño](analisis-de-sistema/06-driver-arquitectonicos.md) |
+| Decisiones arquitectónicas | [ADR, alternativas y consecuencias](analisis-de-sistema/07-decisiones-arquitectonicas.md) |
+| Estilo arquitectónico | [Backend modular y estructura global](arquitectura/estilo-arquitectonico.md) |
+| Enfoque Clean Architecture | [Responsabilidades, estructura propuesta y dependencias](arquitectura/enfoque/enfoque-arquitectonico.md) |
+
+La [arquitectura inicial](arquitectura/arquitectura-inicial.md) se conserva como antecedente. El [informe de revisión](docs/revision-laboratorio-03.md) explica la correspondencia con la Guía 03, la equivalencia de requisitos entre la propuesta Word y el repositorio, y las observaciones pendientes de aclaración.
+
+Los diagramas están escritos en Mermaid y pueden visualizarse en GitHub o en un visor Markdown compatible. El laboratorio se centra en analizar y justificar la arquitectura; no requiere desarrollar funcionalidades nuevas.
