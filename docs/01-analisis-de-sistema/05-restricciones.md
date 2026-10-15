@@ -9,3 +9,5 @@
 | **RC05** | Almacenamiento de Objetos Desacoplado | Las fotografías con metadatos GPS y las actas firmadas en PDF deben almacenarse en repositorios desacoplados compatibles con S3, sin guardarse en discos de cómputo locales. |
 | **RC06** | Integración con Plataformas del Estado | La solución debe integrarse mediante adaptadores desacoplados a la Plataforma RUC de SUNAT, al Directorio de MINCETUR, a servicios GIS OpenStreetMap y a pasarelas SMS/Correo. |
 | **RC07** | Cumplimiento Normativo y Legal | El diseño del tratamiento de datos y almacenamiento de expedientes debe ajustarse estrictamente a las disposiciones de la Ley N° 29733 (Ley de Protección de Datos Personales en el Perú). |
+| **RC08** | Backend y persistencia institucional | Backend Node.js/NestJS, PostgreSQL primaria y réplica, Redis y RabbitMQ. |
+| **RC09** | Control de versiones | Documentación, código y fuentes de diagramas versionados con Git en el repositorio del proyecto. |
