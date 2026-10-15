@@ -1,15 +1,11 @@
 # Decisiones arquitectónicas de SIFITUR Huamanga
 
-## Contexto y estado
-
-Estas decisiones desarrollan el paso 3 de la Guía 03 para el caso SIFITUR. Su estado es **propuesto para el diseño académico**: todavía no existe implementación ni evidencia de cumplimiento de los objetivos de calidad. Los identificadores DA01 a DA06 conservan el significado del [catálogo existente](06-driver-arquitectonicos.md); DA06 corresponde a interoperabilidad, no a mantenibilidad como en el ejemplo Marketplace.
-
 ## Catálogo de decisiones
 
 | ID | Decisión | Driver relacionado | Justificación | Resultado previsto |
 |---|---|---|---|---|
-| ADR-001 | Backend como monolito modular con instancias sin estado. | DA03; RNF-08 de la propuesta. | Mantener una unidad de despliegue del negocio y permitir replicar su ejecución sin administrar microservicios desde el inicio. | Módulos de identidad, padrón, operativos, fiscalización, subsanaciones, riesgo, consulta y auditoría. |
-| ADR-002 | Clean Architecture por módulo. | DA02, DA05, DA06; objetivo de mantenibilidad de la guía. | Aislar reglas de fiscalización de frameworks, persistencia y proveedores. | Dominio, aplicación, presentación e infraestructura con dependencias hacia el interior. |
+| ADR-001 | Backend como monolito modular con instancias sin estado. | DA03, DA08. | Mantener una unidad de despliegue del negocio y permitir replicar su ejecución sin administrar microservicios desde el inicio. | Módulos de identidad, padrón, operativos, fiscalización, subsanaciones, riesgo, consulta y auditoría. |
+| ADR-002 | Clean Architecture por módulo. | DA02, DA05, DA06, DA07. | Aislar reglas de fiscalización de frameworks, persistencia y proveedores. | Dominio, aplicación, presentación e infraestructura con dependencias hacia el interior. |
 | ADR-003 | Consulta pública con caché y réplica de lectura. | DA03, DA04. | Absorber el predominio de lecturas y mantener las escrituras institucionales separadas de los reportes. | Redis para fichas públicas y PostgreSQL de lectura para consultas tolerantes a desfase. |
 | ADR-004 | Integraciones mediante puertos y adaptadores. | DA06. | Evitar que cambios o indisponibilidad de proveedores invadan los casos de uso. | Adaptadores SUNAT, MINCETUR, GIS y notificaciones. |
 | ADR-005 | Registro móvil offline y sincronización idempotente. | DA02. | Continuar la captura de actas sin red y evitar duplicados cuando se reintenta el envío. | SQLite cifrada, cola local y conciliación con el backend. |
@@ -32,9 +28,9 @@ Estas decisiones desarrollan el paso 3 de la Guía 03 para el caso SIFITUR. Su e
 
 **Decisión:** el dominio conserva entidades y reglas; aplicación orquesta casos de uso y define puertos; presentación transforma entradas y salidas; infraestructura implementa los puertos. La raíz de composición conecta las implementaciones.
 
-**Alternativas:** servicios de negocio que usan directamente ORM y SDK, o arquitectura hexagonal. Clean Architecture se selecciona para cumplir el enfoque trabajado en la guía y expresar de manera explícita las cuatro responsabilidades.
+**Alternativas:** servicios de negocio que usan directamente ORM y SDK, o arquitectura hexagonal. Clean Architecture se selecciona para expresar de manera explícita las cuatro responsabilidades.
 
-**Consecuencias:** aumenta el número de contratos y transformaciones. A cambio, reglas y casos de uso pueden probarse con adaptadores en memoria. La mantenibilidad es un objetivo adicional de la guía; no se inventa ni se renumera un driver existente.
+**Consecuencias:** aumenta el número de contratos y transformaciones. A cambio, reglas y casos de uso pueden probarse con adaptadores en memoria. La mantenibilidad se verifica mediante sustitución de adaptadores y pruebas del núcleo.
 
 ## ADR-003 Lecturas públicas y consistencia
 
@@ -96,10 +92,10 @@ Estas decisiones desarrollan el paso 3 de la Guía 03 para el caso SIFITUR. Su e
 | ADR-006 | Recuperación después de fallar cada paso, verificación de hashes y restauración de evidencias. |
 | ADR-007 | Consulta QR sin token; denegación de acceso a expedientes ajenos y trazabilidad de cambios. |
 
-Estas pruebas se proponen como criterios futuros; no se declaran ejecutadas en este entregable documental.
+Los criterios de aceptación arquitectónica se detallan en los escenarios de calidad.
 
 ## Documentos relacionados
 
-- [Estilo arquitectónico](../arquitectura/estilo-arquitectonico.md).
-- [Enfoque Clean Architecture](../arquitectura/enfoque/enfoque-arquitectonico.md).
-- [Informe de revisión y correspondencia con la guía](../docs/revision-laboratorio-03.md).
+- [Estilo arquitectónico](../02-arquitectura-software/estilo-arquitectonico.md).
+- [Enfoque Clean Architecture](../02-arquitectura-software/enfoque-aquitectonico.md).
+- [Escenarios de calidad](08-escenarios-atributos-calidad.md).
