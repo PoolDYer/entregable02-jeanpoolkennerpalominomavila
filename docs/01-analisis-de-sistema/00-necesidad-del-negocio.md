@@ -34,3 +34,9 @@ El proceso comprende empadronamiento, evaluación de riesgo, programación de op
 | Turista / ciudadano | Público abierto | 400 accesos diarios | 8,000 accesos diarios; 900 solicitudes/minuto | Portal Next.js y visor QR |
 
 La estimación considera 30,000 visitantes únicos acumulados en 4 a 6 días durante festividades y un patrón de 95 % lecturas y 5 % escrituras. La capacidad objetivo es 1,200 solicitudes por minuto. Los visitantes acumulados y los accesos diarios no representan usuarios concurrentes.
+
+## Límites del alcance
+
+El sistema gestiona información y trazabilidad de fiscalización; la resolución de sanciones corresponde al coordinador competente. El expediente registra la derivación y su resultado. La clasificación de riesgo consume antecedentes y denuncias ya registrados; la propuesta no desarrolla un procedimiento independiente de recepción ciudadana de denuncias.
+
+La firma manuscrita capturada y el hash son mecanismos del expediente digital; el diseño no presupone un servicio de firma digital certificada. El acceso a sistemas de terceros y los parámetros institucionales de plazos, riesgo y retención se documentan como condiciones de implementación.

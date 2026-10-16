@@ -22,3 +22,15 @@ La arquitectura es cliente-servidor multicanal. La aplicación móvil permite la
 | RabbitMQ y trabajador | Generar documentos y despachar notificaciones mediante tareas recuperables. | Bloqueo de solicitudes por procesamiento pesado. |
 
 La réplica no sustituye copias de seguridad. La conmutación de la primaria, retención de objetos y redundancia de gateway, caché y cola se configuran como parte del despliegue.
+
+## Rutas de datos y continuidad
+
+| Flujo | Recorrido | Garantía / degradación |
+|---|---|---|
+| Consulta pública | Portal → API → Redis; fallo o vencimiento → proyección validada en primaria. | Solo campos públicos; fecha y versión; antigüedad máxima de diseño de 60 s. |
+| Inspección | Flutter → carga autenticada → S3 → registro API → transacción primaria. | No se acusa recepción sin verificar objetos, auditoría y outbox; reintento por operación única. |
+| Emisión | Publicador outbox del trabajador → RabbitMQ → consumidor de actas → S3 y primaria. | Mensaje con referencia al objeto; no transportar fotografías completas en el broker. |
+| Notificación | Acta emitida → outbox → consumidor de notificación → pasarela. | Fallo de envío no revierte emisión; resultado y reintentos persistidos. |
+| Indicadores | Consola → API privada → réplica / proyecciones analíticas. | Muestra fecha de corte; no decide sanciones con datos retrasados. |
+
+El despliegue incorpora standby síncrono para continuidad de la primaria y réplica asíncrona para lecturas. Las capacidades se especifican en [ADR-008](../01-analisis-de-sistema/07-decisiones-arquitectonicas.md#adr-008-recuperación-y-despliegue-redundante). La app conserva la captura sin red si el servidor no puede confirmar de forma durable.

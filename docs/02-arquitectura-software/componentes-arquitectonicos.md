@@ -12,6 +12,24 @@ Fuente editable: [componentes.svg](../../img/fuentes-svg/componentes.svg).
 | Operativos | Campañas, polígonos y asignación de rutas. | RF08 |
 | Inspecciones y evidencias | Captura, sincronización, fotos y actas firmadas. | RF09, RF10, RF11 |
 | Subsanaciones | Descargos, plazos y evaluación de observaciones. | RF12 |
-| Consulta pública e indicadores | Directorio, QR, mapas y exportaciones. | RF13, RF14 |
+| Consulta pública | Directorio y QR con datos autorizados. | RF13 |
+| Indicadores | Mapas, métricas territoriales y exportaciones privadas. | RF14 |
 | Auditoría | Registro de operaciones sensibles de solo anexado. | RF04 |
 | Procesamiento asíncrono | Emisión del PDF, actualización de proyecciones y notificación. | RF06, RF11, RF12 |
+
+## Propiedad de datos y comunicación
+
+| Módulo | Datos propios | Interfaz pública / colaboración |
+|---|---|---|
+| Identidad | Usuarios, roles, sesiones y tokens de recuperación. | IdentityService autentica; AccessPolicy verifica permisos. |
+| Padrón | Prestadores, establecimientos, documentos y vigencias. | ProviderService provee ficha y estado documental a Riesgo y Operativos. |
+| Riesgo | Evaluaciones y versiones de política. | RiskAssessmentEngine calcula criticidad a partir de datos explícitos. |
+| Operativos | Campañas, polígonos, asignaciones y rutas. | OperativoService valida asignación usada por Inspecciones. |
+| Inspecciones | Inspecciones, evidencias, actas, operaciones procesadas y outbox propia. | InspectionService expone registro y consulta; internamente usa RegistrarInspeccionCasoUso. |
+| Subsanaciones | Observaciones, plazos, descargos y resoluciones. | SubsanacionService abre seguimiento y registra evaluación del coordinador. |
+| Consulta pública | Proyección de formalidad sin datos privados. | PublicQueryService lee una ficha versionada; consume cambios institucionales. |
+| Indicadores | Proyecciones analíticas por distrito y periodo. | IndicadoresService consulta vistas autorizadas de lectura; no modifica tablas de otros módulos. |
+| Auditoría | Eventos inalterables de operaciones. | AuditoriaPort participa en la transacción de la mutación; lectura restringida. |
+| Notificaciones | Tareas, intentos y resultado de entrega. | Notificador procesa solicitudes durables desde el trabajador. |
+
+Las interfaces entre módulos son llamadas en memoria dentro de la API. La emisión de PDF, actualización de proyecciones y entrega externa se ejecutan mediante tareas durables en el trabajador. Una unidad de trabajo comparte la transacción necesaria para datos, auditoría y outbox sin permitir acceso directo a repositorios ajenos.

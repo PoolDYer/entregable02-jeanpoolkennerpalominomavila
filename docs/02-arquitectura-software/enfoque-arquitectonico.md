@@ -34,3 +34,9 @@ El dominio y los casos de uso no importan NestJS, ORM ni SDK de proveedores. Cad
 4. El repositorio confirma inspección, auditoría y tarea outbox en una transacción institucional.
 5. El trabajador genera y conserva el PDF, confirma el acta y registra la tarea de notificación.
 6. Un reintento idéntico devuelve el mismo registro; un contenido distinto para la misma operación genera conflicto.
+
+## Elección frente a arquitectura hexagonal
+
+Ambos enfoques separan negocio e infraestructura mediante puertos y adaptadores. SIFITUR utiliza Clean Architecture porque la documentación distingue explícitamente entidades, coordinación de casos de uso, traducción REST e infraestructura. Los puertos permanecen en el núcleo del módulo; ningún caso de uso instancia SDK de S3, conexiones SQL o clientes HTTP.
+
+Las dependencias de código y el flujo de ejecución son distintos: en ejecución el caso de uso llama a un puerto cuyo objeto concreto es un adaptador; en código, el adaptador depende del contrato interno. La raíz de composición es el único punto que conoce ambos.

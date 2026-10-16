@@ -11,3 +11,17 @@
 | **Sistema externo** | **Directorio Nacional MINCETUR** | Repositorio ministerial centralizado de prestadores turísticos formales a nivel nacional. | Validar de forma automatizada las categorizaciones oficiales, registros sectoriales y constancias de inscripción. |
 | **Sistema externo** | **Servidor OpenStreetMap (GIS)** | Servicio de cartografía e información geoespacial. | Proporcionar capas cartográficas base, referencia cartográfica y soporte para visualización de polígonos territoriales. |
 | **Sistema externo** | **Pasarela SMS / Correo Institucional** | Servicio telemático de despacho masivo de notificaciones oficiales. | Despachar copias de actas de fiscalización digitales con hash criptográfico, notificar resoluciones administrativas, emitir alertas por caducidad de certificados y remitir enlaces seguros de recuperación de cuentas. |
+
+## Autorización por operación y ámbito
+
+| Operación | Inspector | Coordinador | Administrador TI | Prestador | Ciudadano |
+|---|---|---|---|---|---|
+| Capturar / sincronizar inspección | Solo asignaciones vigentes | Consulta institucional | Sin atribución inspectiva | No | No |
+| Mantener padrón y programar operativos | Consulta de ruta | Gestiona su ámbito institucional | No | Consulta su establecimiento | Ficha pública |
+| Presentar descargo | Consulta autorizada | Consulta y evalúa | No | Solo expediente propio | No |
+| Evaluar / derivar expediente | No | Resuelve con motivo registrado | No | Consulta resultado propio | No |
+| Usuarios y permisos | Cuenta propia | Cuenta propia | Gestiona accesos | Cuenta propia | No aplica |
+| Bitácora e indicadores privados | Trazas de su operación | Indicadores institucionales | Auditoría técnica autorizada | No | No |
+| Directorio y QR | Público | Público | Público | Público | Público |
+
+Un rol no concede acceso universal: cada solicitud valida institución, asignación o titularidad. Administración técnica y resolución de expedientes son responsabilidades separadas. SUNAT y MINCETUR representan integraciones previstas; su acceso técnico, permisos y contratos de servicio se confirman durante implementación.

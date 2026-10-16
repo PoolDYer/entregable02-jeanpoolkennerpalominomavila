@@ -1,0 +1,251 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2130" viewBox="0 0 2500 2130" role="img">
+  <title>nivel1-contexto · SIFITUR Huamanga</title>
+  <defs>
+    <!-- Marcador de flecha para las relaciones -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo y marco general -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="20" y="20" width="2460" height="2090" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Encabezado del diagrama -->
+  <text x="1250" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#1e293b" text-anchor="middle">Diagrama de contexto</text>
+  <text x="1250" y="122" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#64748b" text-anchor="middle">SIFITUR Huamanga · Personas, fiscalización turística y sistemas externos</text>
+
+  <!-- ========================================== -->
+  <!-- ACTORES / PERSONAS (COLUMNA IZQUIERDA)      -->
+  <!-- Centrados en X = 300 (rango: 70 a 530)     -->
+  <!-- ========================================== -->
+
+  <!-- Actor 1: Inspector de campo (Centro Y = 330) -->
+  <g id="actor-inspector">
+    <ellipse cx="300" cy="230" rx="28" ry="28" fill="#07385b"/>
+    <rect x="220" y="240" width="160" height="42" rx="16" fill="#07385b"/>
+    <rect x="70" y="265" width="460" height="130" rx="36" fill="#07385b"/>
+    <text x="300" y="318" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Inspector de campo</text>
+    <text x="300" y="352" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Captura y sincroniza inspecciones</text>
+  </g>
+
+  <!-- Actor 2: Coordinador DIRCETUR / MPH (Centro Y = 605) -->
+  <g id="actor-coordinador">
+    <ellipse cx="300" cy="505" rx="28" ry="28" fill="#07385b"/>
+    <rect x="220" y="515" width="160" height="42" rx="16" fill="#07385b"/>
+    <rect x="70" y="540" width="460" height="130" rx="36" fill="#07385b"/>
+    <text x="300" y="593" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Coordinador DIRCETUR / MPH</text>
+    <text x="300" y="627" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Planifica y resuelve expedientes</text>
+  </g>
+
+  <!-- Actor 3: Administrador TI (Centro Y = 880) -->
+  <g id="actor-admin">
+    <ellipse cx="300" cy="780" rx="28" ry="28" fill="#07385b"/>
+    <rect x="220" y="790" width="160" height="42" rx="16" fill="#07385b"/>
+    <rect x="70" y="815" width="460" height="130" rx="36" fill="#07385b"/>
+    <text x="300" y="868" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Administrador TI</text>
+    <text x="300" y="902" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Administra usuarios y permisos</text>
+  </g>
+
+  <!-- Actor 4: Prestador turístico (Centro Y = 1155) -->
+  <g id="actor-prestador">
+    <ellipse cx="300" cy="1055" rx="28" ry="28" fill="#07385b"/>
+    <rect x="220" y="1065" width="160" height="42" rx="16" fill="#07385b"/>
+    <rect x="70" y="1090" width="460" height="130" rx="36" fill="#07385b"/>
+    <text x="300" y="1143" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Prestador turístico</text>
+    <text x="300" y="1177" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Consulta su expediente y subsana</text>
+  </g>
+
+  <!-- Actor 5: Turista / ciudadano (Centro Y = 1430) -->
+  <g id="actor-turista">
+    <ellipse cx="300" cy="1330" rx="28" ry="28" fill="#07385b"/>
+    <rect x="220" y="1340" width="160" height="42" rx="16" fill="#07385b"/>
+    <rect x="70" y="1365" width="460" height="130" rx="36" fill="#07385b"/>
+    <text x="300" y="1418" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Turista / ciudadano</text>
+    <text x="300" y="1452" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Consulta pública sin sesión</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- SISTEMA EN ALCANCE (CENTRO)                -->
+  <!-- Centrado en X = 1250, Y = 880 (910 a 1590) -->
+  <!-- ========================================== -->
+  <g id="sistema-sifitur">
+    <rect x="910" y="660" width="680" height="440" rx="8" fill="#07569a"/>
+    <text x="1250" y="708" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#bde0fe" text-anchor="middle">«sistema en alcance»</text>
+    <text x="1250" y="750" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff" text-anchor="middle">SIFITUR Huamanga</text>
+    <text x="1250" y="790" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#ffffff" text-anchor="middle">Sistema Integral de Fiscalización</text>
+    <text x="1250" y="820" font-family="Arial, sans-serif" font-size="21" font-weight="400" fill="#ffffff" text-anchor="middle">de Hospedajes y Servicios Turísticos</text>
+    
+    <line x1="1060" y1="855" x2="1440" y2="855" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.6"/>
+
+    <text x="1250" y="895" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">Padrón, riesgo, operativos, inspección,</text>
+    <text x="1250" y="925" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">actas, subsanaciones y consulta QR.</text>
+    <text x="1250" y="990" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">DIRCETUR Ayacucho / MPH</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- SISTEMAS EXTERNOS (COLUMNA DERECHA)        -->
+  <!-- Centrados en X = 2200 (rango: 1970 a 2430) -->
+  <!-- ========================================== -->
+
+  <!-- Externo 1: SUNAT RUC (Centro Y = 380) -->
+  <g id="ext-sunat">
+    <rect x="1970" y="280" width="460" height="200" rx="8" fill="#788896"/>
+    <text x="2200" y="328" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="2200" y="372" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">SUNAT RUC</text>
+    <text x="2200" y="420" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#f1f5f9" text-anchor="middle">Información tributaria del prestador</text>
+  </g>
+
+  <!-- Externo 2: MINCETUR (Centro Y = 715) -->
+  <g id="ext-mincetur">
+    <rect x="1970" y="615" width="460" height="200" rx="8" fill="#788896"/>
+    <text x="2200" y="663" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="2200" y="707" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">MINCETUR</text>
+    <text x="2200" y="755" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#f1f5f9" text-anchor="middle">Registro y constancias sectoriales</text>
+  </g>
+
+  <!-- Externo 3: OpenStreetMap / GIS (Centro Y = 1045) -->
+  <g id="ext-osm">
+    <rect x="1970" y="945" width="460" height="200" rx="8" fill="#788896"/>
+    <text x="2200" y="993" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="2200" y="1037" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">OpenStreetMap / GIS</text>
+    <text x="2200" y="1085" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#f1f5f9" text-anchor="middle">Cartografía de referencia</text>
+  </g>
+
+  <!-- Externo 4: Pasarela SMS / correo (Centro Y = 1380) -->
+  <g id="ext-sms">
+    <rect x="1970" y="1280" width="460" height="200" rx="8" fill="#788896"/>
+    <text x="2200" y="1328" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="2200" y="1372" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">Pasarela SMS / correo</text>
+    <text x="2200" y="1420" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#f1f5f9" text-anchor="middle">Actas, avisos y recuperación</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RELACIONES IZQUIERDA (ACTORES -> SIFITUR)  -->
+  <!-- ========================================== -->
+
+  <!-- Relación 1: Inspector -> SIFITUR -->
+  <polyline points="530,330 820,330 820,710 910,710" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-1">
+    <rect x="545" y="311" width="260" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="675" y="330" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Registra actas y evidencias</text>
+  </g>
+
+  <!-- Relación 2: Coordinador -> SIFITUR -->
+  <polyline points="530,605 740,605 740,795 910,795" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-2">
+    <rect x="535" y="586" width="200" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="635" y="605" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Gestiona fiscalización</text>
+  </g>
+
+  <!-- Relación 3: Administrador TI -> SIFITUR -->
+  <line x1="530" y1="880" x2="910" y2="880" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-3">
+    <rect x="630" y="861" width="180" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="720" y="880" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Controla accesos</text>
+  </g>
+
+  <!-- Relación 4: Prestador -> SIFITUR -->
+  <polyline points="530,1155 740,1155 740,965 910,965" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-4">
+    <rect x="540" y="1136" width="190" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="635" y="1155" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Presenta descargos</text>
+  </g>
+
+  <!-- Relación 5: Turista -> SIFITUR -->
+  <polyline points="530,1430 820,1430 820,1050 910,1050" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-5">
+    <rect x="550" y="1411" width="250" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="675" y="1430" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Verifica formalidad y QR</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- RELACIONES DERECHA (SIFITUR -> EXTERNOS)   -->
+  <!-- ========================================== -->
+
+  <!-- Relación 6: SIFITUR -> SUNAT RUC -->
+  <polyline points="1590,730 1680,730 1680,380 1970,380" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-6">
+    <rect x="1745" y="361" width="160" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1825" y="380" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Consulta RUC</text>
+  </g>
+
+  <!-- Relación 7: SIFITUR -> MINCETUR -->
+  <polyline points="1590,830 1760,830 1760,715 1970,715" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-7">
+    <rect x="1785" y="696" width="160" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1865" y="715" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Valida registro</text>
+  </g>
+
+  <!-- Relación 8: SIFITUR -> OpenStreetMap -->
+  <polyline points="1590,930 1760,930 1760,1045 1970,1045" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-8">
+    <rect x="1785" y="1026" width="160" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1865" y="1045" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Obtiene mapas</text>
+  </g>
+
+  <!-- Relación 9: SIFITUR -> Pasarela SMS -->
+  <polyline points="1590,1030 1680,1030 1680,1380 1970,1380" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <g id="badge-rel-9">
+    <rect x="1745" y="1361" width="160" height="38" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1825" y="1380" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Solicita envío</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- SECCIÓN: ACCESO A LA INFORMACIÓN           -->
+  <!-- ========================================== -->
+  <g id="seccion-acceso">
+    <rect x="70" y="1640" width="2360" height="96" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="96" y="1676" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1e293b">Acceso a la información</text>
+    <text x="96" y="1710" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#475569">QR y directorio: información pública. Actas, firmas, evidencias y descargos: acceso por rol y expediente. Integraciones externas sujetas a habilitación institucional.</text>
+  </g>
+
+  <!-- ========================================== -->
+  <!-- LEYENDA C4 (4 COLUMNAS x 2 FILAS)          -->
+  <!-- ========================================== -->
+  <g id="leyenda-c4">
+    <rect x="350" y="1800" width="1800" height="230" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="350" y="1768" width="160" height="32" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="430" y="1784" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1e293b" text-anchor="middle" dominant-baseline="central">Leyenda C4</text>
+
+    <!-- Fila 1 (Y = 1860) -->
+    <!-- Columna 1: Sistema -->
+    <rect x="420" y="1838" width="64" height="44" rx="4" fill="#07569a"/>
+    <text x="504" y="1860" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Sistema</text>
+
+    <!-- Columna 2: Contenedor -->
+    <rect x="840" y="1838" width="64" height="44" rx="4" fill="#2f7cba"/>
+    <text x="924" y="1860" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Contenedor</text>
+
+    <!-- Columna 3: Persona / usuario -->
+    <ellipse cx="1292" cy="1847" rx="14" ry="14" fill="#07385b"/>
+    <rect x="1268" y="1855" width="48" height="27" rx="10" fill="#07385b"/>
+    <text x="1336" y="1860" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Persona / usuario</text>
+
+    <!-- Columna 4: Límite -->
+    <rect x="1680" y="1838" width="64" height="44" rx="4" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1764" y="1860" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Límite</text>
+
+    <!-- Fila 2 (Y = 1955) -->
+    <!-- Columna 1: Componente -->
+    <rect x="420" y="1933" width="64" height="44" rx="4" fill="#68afea"/>
+    <text x="504" y="1955" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Componente</text>
+
+    <!-- Columna 2: Sistema externo -->
+    <rect x="840" y="1933" width="64" height="44" rx="4" fill="#788896"/>
+    <text x="924" y="1955" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Sistema externo</text>
+
+    <!-- Columna 3: Almacén de datos -->
+    <rect x="1266" y="1938" width="52" height="34" fill="#006bb7"/>
+    <ellipse cx="1292" cy="1938" rx="26" ry="9" fill="#006bb7"/>
+    <ellipse cx="1292" cy="1972" rx="26" ry="9" fill="#006bb7"/>
+    <text x="1336" y="1955" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Almacén de datos</text>
+
+    <!-- Columna 4: Relación -->
+    <line x1="1680" y1="1955" x2="1736" y2="1955" stroke="#666666" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+    <text x="1764" y="1955" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Relación</text>
+  </g>
+
+  <!-- Pie de página -->
+  <text x="70" y="2080" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#64748b">Las relaciones indican su propósito y protocolo. Diseño propuesto de SIFITUR Huamanga.</text>
+</svg>

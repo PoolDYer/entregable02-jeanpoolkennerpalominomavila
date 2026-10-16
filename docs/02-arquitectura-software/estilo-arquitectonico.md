@@ -27,3 +27,7 @@ Fuente editable: [arquitectura-monolitica-sifitur.svg](../../img/fuentes-svg/arq
 5. La consulta pública no requiere JWT; las operaciones privadas verifican identidad, rol y pertenencia del expediente.
 6. La primaria confirma escrituras; caché y réplica atienden lecturas con políticas de actualización explícitas.
 7. Las tareas asíncronas usan outbox, identificador estable, reintentos y consumidores idempotentes.
+
+## Límites y compensaciones
+
+El monolito modular permite transacciones locales y reduce coordinación operativa, pero sus módulos comparten el ciclo de publicación y un fallo de proceso afecta a la instancia completa. Se mitiga mediante instancias redundantes, contratos de módulo y validación de regresión. El trabajador utiliza el mismo modelo de negocio con entrada de mensajería y escala por separado; la presencia de RabbitMQ no convierte cada módulo en un microservicio.

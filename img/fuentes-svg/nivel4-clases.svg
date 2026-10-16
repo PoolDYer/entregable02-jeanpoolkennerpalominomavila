@@ -1,0 +1,249 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2510" viewBox="0 0 2800 2510" role="img">
+  <title>C4 Nivel 4 · nivel4-clases · SIFITUR Huamanga</title>
+  <defs>
+    <!-- Marcador de flecha abierta/dependencia -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#555555"/>
+    </marker>
+    <!-- Marcador UML para Realización (Triángulo hueco blanco) -->
+    <marker id="uml-realization" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <polygon points="0 1, 11 6, 0 11" fill="#ffffff" stroke="#555555" stroke-width="1.8"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo y marco exterior general -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="20" y="20" width="2760" height="2470" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Encabezado general -->
+  <text x="1400" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#1e293b" text-anchor="middle">C4 · Nivel 4 · Clases y contratos de Inspecciones</text>
+  <text x="1400" y="122" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#64748b" text-anchor="middle">SIFITUR Huamanga · Alcance: API y trabajador del mismo módulo · UML · diseño previsto</text>
+
+  <!-- ============================================================== -->
+  <!-- 1. ENTRADAS Y APLICACIÓN (NIVEL SUPERIOR)                     -->
+  <!-- ============================================================== -->
+  <rect x="50" y="190" width="2700" height="485" rx="8" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="75" y="222" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#475569">ENTRADAS Y APLICACIÓN</text>
+
+  <!-- InspectionController (Presentación API) -->
+  <g id="class-controller">
+    <rect x="80" y="290" width="600" height="240" rx="6" fill="#2f7cba"/>
+    <text x="380" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#dbeafe" text-anchor="middle">PRESENTACIÓN · API</text>
+    <text x="380" y="355" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">InspectionController</text>
+    <line x1="80" y1="380" x2="680" y2="380" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="105" y="420" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff">+ registrar(dto, actor): Respuesta</text>
+    <text x="105" y="458" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff">+ consultar(id, actor): Registro</text>
+  </g>
+
+  <!-- RegistrarInspeccionCasoUso (Aplicación API) -->
+  <g id="class-caso-uso-registrar">
+    <rect x="1040" y="290" width="720" height="240" rx="6" fill="#68afea"/>
+    <text x="1400" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#0f2942" text-anchor="middle">APLICACIÓN · API</text>
+    <text x="1400" y="355" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f2942" text-anchor="middle">RegistrarInspeccionCasoUso</text>
+    <line x1="1040" y1="380" x2="1760" y2="380" stroke="#0f2942" stroke-width="1.5" stroke-opacity="0.4"/>
+    <text x="1065" y="412" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#0f2942">- repositorio: RepositorioInspecciones</text>
+    <text x="1065" y="442" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#0f2942">- almacen: AlmacenEvidencias</text>
+    <line x1="1040" y1="465" x2="1760" y2="465" stroke="#0f2942" stroke-width="1.5" stroke-opacity="0.4"/>
+    <text x="1065" y="500" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#0f2942">+ ejecutar(cmd, actor): Registro</text>
+  </g>
+
+  <!-- ProcesarActaCasoUso (Aplicación Trabajador) -->
+  <g id="class-caso-uso-trabajador">
+    <rect x="2120" y="290" width="600" height="240" rx="6" fill="#68afea"/>
+    <text x="2420" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#0f2942" text-anchor="middle">APLICACIÓN · TRABAJADOR</text>
+    <text x="2420" y="355" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0f2942" text-anchor="middle">ProcesarActaCasoUso</text>
+    <line x1="2120" y1="380" x2="2720" y2="380" stroke="#0f2942" stroke-width="1.5" stroke-opacity="0.4"/>
+    <text x="2145" y="420" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#0f2942">+ ejecutar(eventoId): Resultado</text>
+    <text x="2145" y="458" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#142d45">Genera, custodia y confirma acta</text>
+  </g>
+
+  <!-- Relación: Controller -> RegistrarInspeccionCasoUso (Invoca) -->
+  <line x1="680" y1="410" x2="1040" y2="410" stroke="#666666" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <rect x="800" y="392" width="120" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="860" y="410" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Invoca</text>
+
+  <!-- ============================================================== -->
+  <!-- 2. NÚCLEO · INTERFACES Y TIPOS DEL DOMINIO (NIVEL MEDIO)       -->
+  <!-- 4 Columnas: Centros en X = 380, 1060, 1740, 2420 (Ancho = 600)-->
+  <!-- ============================================================== -->
+  <rect x="50" y="845" width="2700" height="475" rx="8" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="75" y="877" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#475569">NÚCLEO · interfaces y tipos del dominio</text>
+
+  <!-- Interface 1: RepositorioInspecciones -->
+  <g id="iface-repositorio">
+    <rect x="80" y="920" width="600" height="280" rx="6" fill="#07569a"/>
+    <text x="380" y="950" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#bde0fe" text-anchor="middle">«interface»</text>
+    <text x="380" y="985" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">RepositorioInspecciones</text>
+    <line x1="80" y1="1010" x2="680" y2="1010" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="105" y="1050" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ buscarOperacion(clave): Registro?</text>
+    <text x="105" y="1088" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ registrarAtomico(i, huella): Registro</text>
+    <text x="105" y="1126" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ confirmarActa(id, acta): void</text>
+  </g>
+
+  <!-- Interface 2: AlmacenEvidencias -->
+  <g id="iface-almacen">
+    <rect x="760" y="920" width="600" height="280" rx="6" fill="#07569a"/>
+    <text x="1060" y="950" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#bde0fe" text-anchor="middle">«interface»</text>
+    <text x="1060" y="985" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">AlmacenEvidencias</text>
+    <line x1="760" y1="1010" x2="1360" y2="1010" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="785" y="1050" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ verificar(id, hash): boolean</text>
+    <text x="785" y="1088" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ guardarActa(id, bytes): Objeto</text>
+  </g>
+
+  <!-- Interface 3: GeneradorActas -->
+  <g id="iface-generador">
+    <rect x="1440" y="920" width="600" height="280" rx="6" fill="#07569a"/>
+    <text x="1740" y="950" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#bde0fe" text-anchor="middle">«interface»</text>
+    <text x="1740" y="985" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">GeneradorActas</text>
+    <line x1="1440" y1="1010" x2="2040" y2="1010" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="1465" y="1050" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ generar(i): Uint8Array</text>
+  </g>
+
+  <!-- Interface 4: Notificador -->
+  <g id="iface-notificador">
+    <rect x="2120" y="920" width="600" height="280" rx="6" fill="#07569a"/>
+    <text x="2420" y="950" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#bde0fe" text-anchor="middle">«interface»</text>
+    <text x="2420" y="985" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Notificador</text>
+    <line x1="2120" y1="1010" x2="2720" y2="1010" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="2145" y="1050" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff">+ enviar(tarea): ResultadoEnvio</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- CONEXIONES APLICACIÓN -> NÚCLEO (DEPENDENCIAS / RUTAS LIMPIAS) -->
+  <!-- ============================================================== -->
+
+  <!-- RegistrarInspeccionCasoUso -> RepositorioInspecciones (Nivel Y = 730) -->
+  <polyline points="1160,530 1160,730 380,730 380,915" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="650" y="712" width="240" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="770" y="730" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Persiste en transacción</text>
+
+  <!-- RegistrarInspeccionCasoUso -> AlmacenEvidencias (Nivel Y = 800) -->
+  <polyline points="1400,530 1400,800 1060,800 1060,915" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1135" y="782" width="190" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1230" y="800" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Verifica evidencia</text>
+
+  <!-- ProcesarActaCasoUso -> GeneradorActas (Nivel Y = 730) -->
+  <polyline points="2300,530 2300,730 1740,730 1740,915" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1940" y="712" width="160" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="2020" y="730" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Solicita PDF</text>
+
+  <!-- ============================================================== -->
+  <!-- 3. INFRAESTRUCTURA · IMPLEMENTACIÓN DE PUERTOS (ADAPTADORES)   -->
+  <!-- ============================================================== -->
+  <rect x="50" y="1490" width="2700" height="420" rx="8" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="75" y="1522" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#475569">INFRAESTRUCTURA · implementación de los puertos</text>
+
+  <!-- Adapter 1: RepositorioInspeccionesPostgres -->
+  <g id="adapter-postgres">
+    <rect x="80" y="1600" width="600" height="210" rx="6" fill="#2f7cba"/>
+    <text x="380" y="1630" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#dbeafe" text-anchor="middle">ADAPTADOR</text>
+    <text x="380" y="1665" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff" text-anchor="middle">RepositorioInspeccionesPostgres</text>
+    <line x1="80" y1="1690" x2="680" y2="1690" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="380" y="1740" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">Transacciones + unicidad</text>
+  </g>
+
+  <!-- Adapter 2: AlmacenEvidenciasS3 -->
+  <g id="adapter-s3">
+    <rect x="760" y="1600" width="600" height="210" rx="6" fill="#2f7cba"/>
+    <text x="1060" y="1630" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#dbeafe" text-anchor="middle">ADAPTADOR</text>
+    <text x="1060" y="1665" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">AlmacenEvidenciasS3</text>
+    <line x1="760" y1="1690" x2="1360" y2="1690" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="1060" y="1740" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">Objetos, hashes y versión</text>
+  </g>
+
+  <!-- Adapter 3: GeneradorActasPdf -->
+  <g id="adapter-pdf">
+    <rect x="1440" y="1600" width="600" height="210" rx="6" fill="#2f7cba"/>
+    <text x="1740" y="1630" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#dbeafe" text-anchor="middle">ADAPTADOR</text>
+    <text x="1740" y="1665" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">GeneradorActasPdf</text>
+    <line x1="1440" y1="1690" x2="2040" y2="1690" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="1740" y="1740" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">Renderizado del acta</text>
+  </g>
+
+  <!-- Adapter 4: NotificadorInstitucional -->
+  <g id="adapter-notificador">
+    <rect x="2120" y="1600" width="600" height="210" rx="6" fill="#2f7cba"/>
+    <text x="2420" y="1630" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="#dbeafe" text-anchor="middle">ADAPTADOR</text>
+    <text x="2420" y="1665" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">NotificadorInstitucional</text>
+    <line x1="2120" y1="1690" x2="2720" y2="1690" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="2420" y="1740" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">Pasarela SMS / correo</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- REALIZACIONES (ADAPTADORES -> INTERFACES CON TRIÁNGULO HUECO)  -->
+  <!-- ============================================================== -->
+  <line x1="380" y1="1600" x2="380" y2="1205" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#uml-realization)"/>
+  <rect x="305" y="1382" width="150" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="380" y="1400" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Implementa</text>
+
+  <line x1="1060" y1="1600" x2="1060" y2="1205" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#uml-realization)"/>
+  <rect x="985" y="1382" width="150" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1060" y="1400" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Implementa</text>
+
+  <line x1="1740" y1="1600" x2="1740" y2="1205" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#uml-realization)"/>
+  <rect x="1665" y="1382" width="150" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1740" y="1400" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Implementa</text>
+
+  <line x1="2420" y1="1600" x2="2420" y2="1205" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#uml-realization)"/>
+  <rect x="2345" y="1382" width="150" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="2420" y="1400" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Implementa</text>
+
+  <!-- ============================================================== -->
+  <!-- 4. SECCIÓN: COMPOSICIÓN                                        -->
+  <!-- ============================================================== -->
+  <g id="seccion-composicion">
+    <rect x="80" y="1960" width="2640" height="110" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="105" y="1996" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1e293b">Composición</text>
+    <text x="105" y="2034" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#475569">InspeccionesModule conecta contratos y adaptadores. ProcesarActaCasoUso también utiliza repositorio y almacén; sus llamadas se detallan en la secuencia de emisión.</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- 5. LEYENDA · NIVEL 4 / UML (3 COLUMNAS SIMÉTRICAS)             -->
+  <!-- ============================================================== -->
+  <g id="leyenda-uml">
+    <rect x="80" y="2170" width="2640" height="240" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="80" y="2138" width="270" height="32" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="215" y="2154" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1e293b" text-anchor="middle" dominant-baseline="central">Leyenda · Nivel 4 / UML</text>
+
+    <!-- Columna 1: Formas y Elementos (X ~ 120) -->
+    <!-- Fila 1 (Y = 2210) -->
+    <rect x="120" y="2195" width="60" height="34" rx="4" fill="#68afea"/>
+    <text x="200" y="2212" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Clase del núcleo</text>
+
+    <!-- Fila 2 (Y = 2265) -->
+    <rect x="120" y="2248" width="60" height="34" rx="4" fill="#07569a"/>
+    <text x="200" y="2265" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Interfaz del núcleo</text>
+
+    <!-- Fila 3 (Y = 2320) -->
+    <rect x="120" y="2303" width="60" height="34" rx="4" fill="#2f7cba"/>
+    <text x="200" y="2320" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Entrada / adaptador</text>
+
+    <!-- Columna 2: Conectores y Flechas (X ~ 950) -->
+    <!-- Fila 1: Asociación -->
+    <line x1="950" y1="2212" x2="1050" y2="2212" stroke="#666666" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="1080" y="2212" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Asociación</text>
+
+    <!-- Fila 2: Dependencia -->
+    <line x1="950" y1="2265" x2="1050" y2="2265" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+    <text x="1080" y="2265" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Dependencia</text>
+
+    <!-- Fila 3: Realización de interfaz -->
+    <line x1="950" y1="2320" x2="1050" y2="2320" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#uml-realization)"/>
+    <text x="1080" y="2320" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Realización de interfaz</text>
+
+    <!-- Columna 3: Composición y Notación UML (X ~ 1850) -->
+    <!-- Fila 1: Composición -->
+    <line x1="1850" y1="2212" x2="1950" y2="2212" stroke="#666666" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <polygon points="1850 2212, 1862 2219, 1874 2212, 1862 2205" fill="#666666"/>
+    <text x="1980" y="2212" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Composición</text>
+
+    <!-- Fila 2: Visibilidad -->
+    <text x="1850" y="2265" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Visibilidad: + público / - privado</text>
+
+    <!-- Fila 3: Cardinalidad -->
+    <text x="1850" y="2320" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">1..*: una o más partes · 0..1: opcional</text>
+  </g>
+
+  <!-- Pie de página -->
+  <text x="80" y="2465" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#64748b">Discontinua abierta: dependencia · Discontinua con triángulo hueco: realización · + público / - privado · «interface»: contrato</text>
+</svg>

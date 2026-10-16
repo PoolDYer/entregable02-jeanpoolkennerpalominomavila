@@ -11,6 +11,7 @@
 | ADR-005 | Registro móvil offline y sincronización idempotente. | DA02. | Continuar la captura de actas sin red y evitar duplicados cuando se reintenta el envío. | SQLite cifrada, cola local y conciliación con el backend. |
 | ADR-006 | Evidencias en objetos y tareas asíncronas recuperables. | DA05. | Separar archivos pesados del cómputo y preservar su relación con el expediente. | S3 compatible, RabbitMQ, trabajador e historial de procesamiento. |
 | ADR-007 | Autorización por rol y auditoría de acciones sensibles. | DA01, DA05. | Proteger expedientes y mantener trazabilidad de cambios. | JWT para rutas privadas, RBAC en backend y registro de auditoría con acceso restringido. |
+| ADR-008 | Recuperación y despliegue redundante. | DA03, DA05, DA08. | Evitar pérdida de datos confirmados y reducir interrupciones. | Standby síncrono, copias, broker replicado y conmutación controlada. |
 
 ## ADR-001 Backend modular
 
@@ -26,7 +27,7 @@
 
 **Contexto:** las reglas de riesgo, vigencias y subsanaciones deben poder revisarse sin depender de Flutter, NestJS, Redis o S3.
 
-**Decisión:** el dominio conserva entidades y reglas; aplicación orquesta casos de uso y define puertos; presentación transforma entradas y salidas; infraestructura implementa los puertos. La raíz de composición conecta las implementaciones.
+**Decisión:** el dominio conserva entidades y reglas; aplicación orquesta casos de uso sobre puertos definidos en el dominio; presentación transforma entradas y salidas; infraestructura implementa los puertos. La raíz de composición conecta las implementaciones.
 
 **Alternativas:** servicios de negocio que usan directamente ORM y SDK, o arquitectura hexagonal. Clean Architecture se selecciona para expresar de manera explícita las cuatro responsabilidades.
 
@@ -40,13 +41,13 @@
 
 **Alternativas:** todas las consultas a la primaria o caché sin invalidación. Se prioriza descargar las lecturas manteniendo un mecanismo explícito de actualización.
 
-**Consecuencias:** caché y réplica pueden mostrar datos anteriores al último cambio. Se debe acordar un límite de desactualización; mientras no se valide, no se promete consulta estrictamente instantánea. Las decisiones sobre sanciones y estados actuales consultan la primaria. Ante fallo de Redis se consulta la base con límites de carga. CDN se aplica a recursos estáticos y solo a respuestas públicas con políticas apropiadas.
+**Consecuencias:** caché y réplica pueden mostrar datos anteriores al último cambio. Como parámetro inicial de diseño se fija una antigüedad máxima de 60 segundos para la proyección pública; una ficha vencida se revalida o se presenta como temporalmente no verificable. El TTL se calcula desde la fecha de la proyección, sin renovarlo al leerla. La reconstrucción de formalidad consulta la primaria y no una réplica atrasada. La meta requiere validación con DIRCETUR/MPH. Las decisiones sobre sanciones y estados actuales consultan la primaria. Ante fallo de Redis se consulta la base con límites de carga. CDN se aplica a recursos estáticos y solo a respuestas públicas con políticas apropiadas.
 
 ## ADR-004 Servicios externos desacoplados
 
 **Contexto:** RC06 identifica SUNAT, MINCETUR, OpenStreetMap y SMS/correo.
 
-**Decisión:** aplicación define contratos de validación tributaria, consulta sectorial, cartografía y notificación; infraestructura implementa los clientes. Se configuran tiempos límite, reintentos acotados y circuit breaker. Las notificaciones se envían mediante tareas asíncronas con identificador de envío.
+**Decisión:** el núcleo define contratos de validación tributaria, consulta sectorial, cartografía y notificación; infraestructura implementa los clientes. Se configuran tiempos límite, reintentos acotados y circuit breaker. Las notificaciones se envían mediante tareas asíncronas con identificador de envío.
 
 **Alternativa:** consumir proveedores desde controladores o entidades. Se descarta porque acopla el negocio al protocolo y al proveedor.
 
@@ -97,5 +98,19 @@ Los criterios de aceptación arquitectónica se detallan en los escenarios de ca
 ## Documentos relacionados
 
 - [Estilo arquitectónico](../02-arquitectura-software/estilo-arquitectonico.md).
-- [Enfoque Clean Architecture](../02-arquitectura-software/enfoque-aquitectonico.md).
+- [Enfoque Clean Architecture](../02-arquitectura-software/enfoque-arquitectonico.md).
 - [Escenarios de calidad](08-escenarios-atributos-calidad.md).
+
+## ADR-008 Recuperación y despliegue redundante
+
+**Contexto:** AC02, AC04 y AC08 requieren continuidad, custodia y costos controlados; replicar solamente el backend no cubre fallos del gateway, base, caché o broker.
+
+**Decisión:** desplegar instancias API en dos dominios de fallo, entrada redundante, PostgreSQL con standby síncrono para datos confirmados y réplica asíncrona para reportes. La promoción aplica exclusión del primario anterior para evitar dos escritores. Redis puede reconstruirse; su caída deriva a lectura controlada de primaria. RabbitMQ utiliza colas durables replicadas, mensajes persistentes, confirmación del publicador y acuse del consumidor después de persistir el resultado. La outbox conserva tareas hasta confirmar publicación. Las referencias de objetos se verifican antes del acuse de recepción.
+
+**Alternativas:** primaria única con restauración manual o replicación asíncrona como única protección. La primera aumenta la interrupción; la segunda puede perder transacciones ya confirmadas al promover un nodo atrasado.
+
+**Consecuencias:** la redundancia incrementa costo y latencia de escritura. Si el standby síncrono no está disponible, se conserva captura móvil y se suspende la confirmación central antes de degradar silenciosamente la garantía. Las copias con recuperación a un punto temporal y el versionado de objetos protegen frente a borrado o corrupción lógica. RPO objetivo de datos confirmados: 0 ante fallo de un nodo; RTO propuesto: ≤ 5 minutos en conmutación controlada. Una pérdida regional queda fuera de esa garantía hasta definir y ensayar recuperación geográfica.
+
+**Verificación:** fallar instancia, primaria y broker; contrastar registros confirmados, eventos y hashes; medir recuperación y restaurar copias. Son objetivos de diseño, no resultados de pruebas de un despliegue existente.
+
+Referencias técnicas: [entrega confiable en RabbitMQ](https://www.rabbitmq.com/docs/reliability) y [retención de objetos en Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html). Un proveedor compatible con S3 debe acreditar por separado las capacidades de retención contratadas.

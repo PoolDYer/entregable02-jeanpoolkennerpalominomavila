@@ -1,0 +1,382 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="2870" viewBox="0 0 2800 2870" role="img">
+  <title>nivel2-contenedores · SIFITUR Huamanga</title>
+  <defs>
+    <!-- Marcador de flecha para relaciones C4 -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <!-- Marco general del diagrama -->
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <rect x="20" y="20" width="2760" height="2830" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- Encabezado general -->
+  <text x="1400" y="80" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#1e293b" text-anchor="middle">C4 / 02 · Contenedores</text>
+  <text x="1400" y="122" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#64748b" text-anchor="middle">SIFITUR Huamanga · Alcance: aplicaciones y almacenes lógicos · Tecnologías y protocolos</text>
+
+  <!-- ============================================================== -->
+  <!-- 1. ACTORES / PERSONAS (FILA SUPERIOR)                         -->
+  <!-- Centros en X: 380, 1060, 1740, 2420 (Ancho = 580 px)           -->
+  <!-- ============================================================== -->
+
+  <!-- Actor 1: Inspector -->
+  <g id="actor-inspector">
+    <ellipse cx="380" cy="190" rx="24" ry="24" fill="#07385b"/>
+    <rect x="290" y="200" width="180" height="36" rx="14" fill="#07385b"/>
+    <rect x="90" y="225" width="580" height="90" rx="36" fill="#07385b"/>
+    <text x="380" y="278" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Inspector</text>
+  </g>
+
+  <!-- Actor 2: Coordinador / Administrador TI -->
+  <g id="actor-coordinador-admin">
+    <ellipse cx="1060" cy="190" rx="24" ry="24" fill="#07385b"/>
+    <rect x="970" y="200" width="180" height="36" rx="14" fill="#07385b"/>
+    <rect x="770" y="225" width="580" height="90" rx="36" fill="#07385b"/>
+    <text x="1060" y="278" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Coordinador / Administrador TI</text>
+  </g>
+
+  <!-- Actor 3: Prestador turístico -->
+  <g id="actor-prestador">
+    <ellipse cx="1740" cy="190" rx="24" ry="24" fill="#07385b"/>
+    <rect x="1650" y="200" width="180" height="36" rx="14" fill="#07385b"/>
+    <rect x="1450" y="225" width="580" height="90" rx="36" fill="#07385b"/>
+    <text x="1740" y="278" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Prestador turístico</text>
+  </g>
+
+  <!-- Actor 4: Turista / ciudadano -->
+  <g id="actor-turista">
+    <ellipse cx="2420" cy="190" rx="24" ry="24" fill="#07385b"/>
+    <rect x="2330" y="200" width="180" height="36" rx="14" fill="#07385b"/>
+    <rect x="2130" y="225" width="580" height="90" rx="36" fill="#07385b"/>
+    <text x="2420" y="278" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Turista / ciudadano</text>
+  </g>
+
+  <!-- Relaciones Actor -> Canal -->
+  <line x1="380" y1="315" x2="380" y2="505" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="265" y="358" width="230" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="380" y="376" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Interacción de usuario</text>
+
+  <line x1="1060" y1="315" x2="1060" y2="505" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="945" y="358" width="230" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1060" y="376" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Interacción de usuario</text>
+
+  <line x1="1740" y1="315" x2="1740" y2="505" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1625" y="358" width="230" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1740" y="376" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Interacción de usuario</text>
+
+  <line x1="2420" y1="315" x2="2420" y2="505" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="2305" y="358" width="230" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="2420" y="376" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Interacción de usuario</text>
+
+  <!-- ============================================================== -->
+  <!-- 2. FRONTERA DEL SISTEMA SIFITUR HUAMANGA                       -->
+  <!-- ============================================================== -->
+  <rect x="50" y="420" width="2700" height="1540" rx="8" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="75" y="452" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#475569">SIFITUR HUAMANGA · FRONTERA DEL SISTEMA</text>
+  <text x="75" y="478" font-family="Arial, sans-serif" font-size="16" font-weight="400" fill="#64748b">Cada aplicación tiene ejecución propia; SQLite permanece embebida en el dispositivo.</text>
+
+  <!-- ============================================================== -->
+  <!-- 3. CANALES / FRONTENDS (Y: 510 a 690)                          -->
+  <!-- ============================================================== -->
+
+  <!-- App Móvil -->
+  <g id="canal-app-movil">
+    <rect x="90" y="510" width="580" height="180" rx="8" fill="#2f7cba"/>
+    <text x="380" y="538" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · canal»</text>
+    <text x="380" y="575" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">App móvil</text>
+    <text x="380" y="615" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">Flutter · captura y sincronización</text>
+    <text x="380" y="645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">SQLite + archivos cifrados</text>
+  </g>
+
+  <!-- Consola Institucional -->
+  <g id="canal-consola">
+    <rect x="770" y="510" width="580" height="180" rx="8" fill="#2f7cba"/>
+    <text x="1060" y="538" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · canal»</text>
+    <text x="1060" y="575" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">Consola institucional</text>
+    <text x="1060" y="615" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">React SPA · padrón, operativos</text>
+    <text x="1060" y="645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">usuarios e indicadores</text>
+  </g>
+
+  <!-- Portal del Administrado -->
+  <g id="canal-administrado">
+    <rect x="1450" y="510" width="580" height="180" rx="8" fill="#2f7cba"/>
+    <text x="1740" y="538" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · canal»</text>
+    <text x="1740" y="575" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">Portal del administrado</text>
+    <text x="1740" y="615" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">React SPA · expediente propio</text>
+    <text x="1740" y="645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">descargos y seguimiento</text>
+  </g>
+
+  <!-- Portal Ciudadano -->
+  <g id="canal-ciudadano">
+    <rect x="2130" y="510" width="580" height="180" rx="8" fill="#2f7cba"/>
+    <text x="2420" y="538" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · canal»</text>
+    <text x="2420" y="575" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">Portal ciudadano</text>
+    <text x="2420" y="615" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#ffffff" text-anchor="middle">Next.js SSR · directorio</text>
+    <text x="2420" y="645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">consulta pública y QR</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- 4. GATEWAY Y BALANCEADOR (Y: 820 a 960)                        -->
+  <!-- ============================================================== -->
+  <g id="gateway">
+    <rect x="800" y="820" width="1200" height="140" rx="8" fill="#2f7cba"/>
+    <text x="1400" y="848" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · perímetro»</text>
+    <text x="1400" y="885" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">Gateway y balanceador</text>
+    <text x="1400" y="925" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">NGINX / WAF · entrada HTTPS y control de tráfico</text>
+  </g>
+
+  <!-- Conexiones Frontends -> Gateway (Puntos de quiebre en Y = 755) -->
+  <polyline points="380,690 380,755 950,755 950,815" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="585" y="737" width="160" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="665" y="755" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">HTTPS / REST</text>
+
+  <polyline points="1060,690 1060,755 1250,755 1250,815" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1075" y="737" width="160" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1155" y="755" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">HTTPS / REST</text>
+
+  <polyline points="1740,690 1740,755 1550,755 1550,815" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1565" y="737" width="160" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1645" y="755" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">HTTPS / REST</text>
+
+  <polyline points="2420,690 2420,755 1850,755 1850,815" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="2055" y="737" width="160" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="2135" y="755" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">HTTPS / REST</text>
+
+  <!-- ============================================================== -->
+  <!-- 5. BACKEND API Y WORKER (Y: 1100 a 1315)                       -->
+  <!-- ============================================================== -->
+
+  <!-- Backend API Application -->
+  <g id="backend-api">
+    <rect x="90" y="1100" width="1440" height="215" rx="8" fill="#2f7cba"/>
+    <text x="810" y="1132" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · api»</text>
+    <text x="810" y="1170" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">Backend API Application</text>
+    <text x="810" y="1210" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">Node.js / NestJS · monolito modular sin estado</text>
+    <text x="810" y="1250" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">Identidad, padrón, riesgo, operativos, inspecciones, subsanaciones, consulta e indicadores</text>
+  </g>
+
+  <!-- Trabajador Asíncrono -->
+  <g id="worker">
+    <rect x="1750" y="1100" width="960" height="215" rx="8" fill="#2f7cba"/>
+    <text x="2230" y="1132" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«contenedor · worker»</text>
+    <text x="2230" y="1170" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">Trabajador asíncrono</text>
+    <text x="2230" y="1210" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">Node.js · publicador outbox y consumidores</text>
+    <text x="2230" y="1250" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#e2e8f0" text-anchor="middle">PDF, notificación y proyección pública</text>
+  </g>
+
+  <!-- Conexión Gateway -> Backend API -->
+  <polyline points="1400,960 1400,1030 810,1030 810,1095" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1000" y="1012" width="210" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1105" y="1030" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">HTTPS · red interna</text>
+
+  <!-- ============================================================== -->
+  <!-- 6. ALMACENES DE DATOS (Y: 1545 a 1705)                         -->
+  <!-- Centros en X: 330, 865, 1400, 1935, 2470 (Paso = 535 px)       -->
+  <!-- ============================================================== -->
+
+  <!-- Almacén 1: PostgreSQL primaria (Centro X = 330) -->
+  <g id="db-postgres-primaria">
+    <rect x="90" y="1560" width="480" height="130" fill="#006bb7"/>
+    <ellipse cx="330" cy="1690" rx="240" ry="16" fill="#006bb7"/>
+    <ellipse cx="330" cy="1560" rx="240" ry="16" fill="#006bb7" stroke="#ffffff" stroke-width="2"/>
+    <text x="330" y="1615" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">PostgreSQL primaria</text>
+    <text x="330" y="1650" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Datos + auditoría + outbox</text>
+  </g>
+
+  <!-- Almacén 2: Réplica PostgreSQL (Centro X = 865) -->
+  <g id="db-postgres-replica">
+    <rect x="625" y="1560" width="480" height="130" fill="#006bb7"/>
+    <ellipse cx="865" cy="1690" rx="240" ry="16" fill="#006bb7"/>
+    <ellipse cx="865" cy="1560" rx="240" ry="16" fill="#006bb7" stroke="#ffffff" stroke-width="2"/>
+    <text x="865" y="1615" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Réplica PostgreSQL</text>
+    <text x="865" y="1650" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Reportes con fecha de corte</text>
+  </g>
+
+  <!-- Almacén 3: Redis (Centro X = 1400) -->
+  <g id="db-redis">
+    <rect x="1160" y="1560" width="480" height="130" fill="#006bb7"/>
+    <ellipse cx="1400" cy="1690" rx="240" ry="16" fill="#006bb7"/>
+    <ellipse cx="1400" cy="1560" rx="240" ry="16" fill="#006bb7" stroke="#ffffff" stroke-width="2"/>
+    <text x="1400" y="1615" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Redis</text>
+    <text x="1400" y="1650" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Proyección pública temporal</text>
+  </g>
+
+  <!-- Almacén 4: S3 compatible (Centro X = 1935) -->
+  <g id="db-s3">
+    <rect x="1695" y="1560" width="480" height="130" fill="#006bb7"/>
+    <ellipse cx="1935" cy="1690" rx="240" ry="16" fill="#006bb7"/>
+    <ellipse cx="1935" cy="1560" rx="240" ry="16" fill="#006bb7" stroke="#ffffff" stroke-width="2"/>
+    <text x="1935" y="1615" font-family="Arial, sans-serif" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">S3 compatible</text>
+    <text x="1935" y="1650" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#e2e8f0" text-anchor="middle">Originales y PDF</text>
+  </g>
+
+  <!-- Almacén 5: RabbitMQ (Centro X = 2470) -->
+  <g id="db-rabbitmq">
+    <rect x="2230" y="1545" width="480" height="160" rx="8" fill="#006bb7"/>
+    <text x="2470" y="1575" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«almacén / mensajería»</text>
+    <text x="2470" y="1615" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">RabbitMQ</text>
+    <text x="2470" y="1655" font-family="Arial, sans-serif" font-size="20" font-weight="400" fill="#ffffff" text-anchor="middle">Tareas durables / AMQPS</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- 7. CONEXIONES API / WORKER -> ALMACENES DE DATOS               -->
+  <!-- ============================================================== -->
+
+  <!-- API -> PostgreSQL Primaria (Vertical limpia) -->
+  <line x1="330" y1="1315" x2="330" y2="1540" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="275" y="1412" width="110" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="330" y="1430" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">SQL / TLS</text>
+
+  <!-- API -> Réplica PostgreSQL (Vertical limpia) -->
+  <line x1="865" y1="1315" x2="865" y2="1540" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="810" y="1412" width="110" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="865" y="1430" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">SQL / TLS</text>
+
+  <!-- API -> Redis (Vertical limpia) -->
+  <line x1="1400" y1="1315" x2="1400" y2="1540" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1340" y="1412" width="120" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1400" y="1430" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">RESP / TLS</text>
+
+  <!-- API -> S3 compatible -->
+  <polyline points="1480,1315 1480,1465 1880,1465 1880,1540" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1625" y="1447" width="130" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1690" y="1465" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">HTTPS / S3</text>
+
+  <!-- Worker -> RabbitMQ (Vertical limpia) -->
+  <line x1="2470" y1="1315" x2="2470" y2="1535" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="2330" y="1412" width="280" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="2470" y="1430" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Publica / consume · AMQPS</text>
+
+  <!-- Worker -> S3 compatible (Custodia PDF) -->
+  <line x1="2000" y1="1315" x2="2000" y2="1540" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1890" y="1372" width="220" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="2000" y="1390" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Custodia PDF · HTTPS</text>
+
+  <!-- Worker -> PostgreSQL Primaria (Outbox) [Canal horizontal en Y = 1765] -->
+  <polyline points="1750,1260 1670,1260 1670,1765 330,1765 330,1700" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="765" y="1747" width="370" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="950" y="1765" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Lee outbox y confirma tareas · SQL/TLS</text>
+
+  <!-- Worker -> Redis (Proyección) [Canal horizontal en Y = 1825] -->
+  <polyline points="1840,1315 1840,1825 1400,1825 1400,1700" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="1465" y="1807" width="320" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="1625" y="1825" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Actualiza proyección · RESP/TLS</text>
+
+  <!-- Replicación PostgreSQL Primaria -> Réplica [Canal horizontal en Y = 1885] -->
+  <polyline points="330,1700 330,1885 865,1885 865,1700" fill="none" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+  <rect x="455" y="1867" width="290" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="600" y="1885" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Replicación · PostgreSQL/TLS</text>
+
+  <!-- Subtítulo de frontera -->
+  <text x="90" y="1940" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#142d45">API → SUNAT / MINCETUR / GIS · Worker → SMS / correo · Relaciones de integración por HTTPS</text>
+
+  <!-- ============================================================== -->
+  <!-- 8. INTEGRACIONES EXTERNAS (FILA INFERIOR)                      -->
+  <!-- ============================================================== -->
+
+  <!-- Externo 1: SUNAT RUC (Centro X = 380) -->
+  <g id="integ-sunat">
+    <rect x="90" y="2020" width="580" height="80" rx="6" fill="#2f7cba"/>
+    <text x="380" y="2046" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«origen de integración»</text>
+    <text x="380" y="2080" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Backend API</text>
+
+    <line x1="380" y1="2100" x2="380" y2="2230" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+    <rect x="255" y="2152" width="250" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="380" y="2170" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Consulta / envío · HTTPS</text>
+
+    <rect x="90" y="2240" width="580" height="140" rx="6" fill="#788896"/>
+    <text x="380" y="2275" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="380" y="2318" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">SUNAT RUC</text>
+    <text x="380" y="2355" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#f1f5f9" text-anchor="middle">Información tributaria del prestador</text>
+  </g>
+
+  <!-- Externo 2: MINCETUR (Centro X = 1060) -->
+  <g id="integ-mincetur">
+    <rect x="770" y="2020" width="580" height="80" rx="6" fill="#2f7cba"/>
+    <text x="1060" y="2046" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«origen de integración»</text>
+    <text x="1060" y="2080" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Backend API</text>
+
+    <line x1="1060" y1="2100" x2="1060" y2="2230" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+    <rect x="935" y="2152" width="250" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1060" y="2170" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Consulta / envío · HTTPS</text>
+
+    <rect x="770" y="2240" width="580" height="140" rx="6" fill="#788896"/>
+    <text x="1060" y="2275" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="1060" y="2318" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">MINCETUR</text>
+    <text x="1060" y="2355" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#f1f5f9" text-anchor="middle">Registro y constancias sectoriales</text>
+  </g>
+
+  <!-- Externo 3: OpenStreetMap (Centro X = 1740) -->
+  <g id="integ-osm">
+    <rect x="1450" y="2020" width="580" height="80" rx="6" fill="#2f7cba"/>
+    <text x="1740" y="2046" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«origen de integración»</text>
+    <text x="1740" y="2080" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Backend API</text>
+
+    <line x1="1740" y1="2100" x2="1740" y2="2230" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+    <rect x="1615" y="2152" width="250" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="1740" y="2170" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Consulta / envío · HTTPS</text>
+
+    <rect x="1450" y="2240" width="580" height="140" rx="6" fill="#788896"/>
+    <text x="1740" y="2275" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="1740" y="2318" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">OpenStreetMap</text>
+    <text x="1740" y="2355" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#f1f5f9" text-anchor="middle">Cartografía base y georreferenciación</text>
+  </g>
+
+  <!-- Externo 4: Pasarela SMS / correo (Centro X = 2420) -->
+  <g id="integ-sms">
+    <rect x="2130" y="2020" width="580" height="80" rx="6" fill="#2f7cba"/>
+    <text x="2420" y="2046" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#dbeafe" text-anchor="middle">«origen de integración»</text>
+    <text x="2420" y="2080" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">Trabajador asíncrono</text>
+
+    <line x1="2420" y1="2100" x2="2420" y2="2230" stroke="#666666" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arrow)"/>
+    <rect x="2295" y="2152" width="250" height="36" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="2420" y="2170" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#142d45" text-anchor="middle" dominant-baseline="central">Consulta / envío · HTTPS</text>
+
+    <rect x="2130" y="2240" width="580" height="140" rx="6" fill="#788896"/>
+    <text x="2420" y="2275" font-family="Arial, sans-serif" font-size="15" font-weight="400" fill="#e2e8f0" text-anchor="middle">«sistema externo»</text>
+    <text x="2420" y="2318" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff" text-anchor="middle">SMS / correo</text>
+    <text x="2420" y="2355" font-family="Arial, sans-serif" font-size="18" font-weight="400" fill="#f1f5f9" text-anchor="middle">Entrega de actas, avisos y tokens</text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- 9. LEYENDA C4 (4 COLUMNAS x 2 FILAS)                           -->
+  <!-- ============================================================== -->
+  <g id="leyenda-c4">
+    <rect x="500" y="2490" width="1800" height="230" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect x="500" y="2458" width="160" height="32" rx="4" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="580" y="2474" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#1e293b" text-anchor="middle" dominant-baseline="central">Leyenda C4</text>
+
+    <!-- Fila 1 (Y = 2550) -->
+    <rect x="570" y="2528" width="64" height="44" rx="4" fill="#07569a"/>
+    <text x="654" y="2550" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Sistema</text>
+
+    <rect x="990" y="2528" width="64" height="44" rx="4" fill="#2f7cba"/>
+    <text x="1074" y="2550" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Contenedor</text>
+
+    <ellipse cx="1442" cy="2537" rx="14" ry="14" fill="#07385b"/>
+    <rect x="1418" y="2545" width="48" height="27" rx="10" fill="#07385b"/>
+    <text x="1486" y="2550" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Persona / usuario</text>
+
+    <rect x="1830" y="2528" width="64" height="44" rx="4" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="1914" y="2550" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Límite</text>
+
+    <!-- Fila 2 (Y = 2645) -->
+    <rect x="570" y="2623" width="64" height="44" rx="4" fill="#68afea"/>
+    <text x="654" y="2645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Componente</text>
+
+    <rect x="990" y="2623" width="64" height="44" rx="4" fill="#788896"/>
+    <text x="1074" y="2645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Sistema externo</text>
+
+    <rect x="1416" y="2628" width="52" height="34" fill="#006bb7"/>
+    <ellipse cx="1442" cy="2628" rx="26" ry="9" fill="#006bb7"/>
+    <ellipse cx="1442" cy="2662" rx="26" ry="9" fill="#006bb7"/>
+    <text x="1486" y="2645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Almacén de datos</text>
+
+    <line x1="1830" y1="2645" x2="1886" y2="2645" stroke="#666666" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+    <text x="1914" y="2645" font-family="Arial, sans-serif" font-size="19" font-weight="400" fill="#334155" dominant-baseline="central">Relación</text>
+  </g>
+
+  <!-- Pie de página -->
+  <text x="70" y="2800" font-family="Arial, sans-serif" font-size="17" font-weight="400" fill="#64748b">Las relaciones indican su propósito y protocolo. Diseño propuesto de SIFITUR Huamanga.</text>
+</svg>

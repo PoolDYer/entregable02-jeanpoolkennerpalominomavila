@@ -16,3 +16,7 @@
 | **HU12** | Como coordinador, quiero registrar y consultar prestadores y sus documentos, para mantener un padrón institucional actualizado. |
 | **HU13** | Como coordinador, quiero recibir alertas de documentos próximos a vencer, para programar acciones preventivas. |
 | **HU14** | Como coordinador, quiero conocer el nivel de criticidad del establecimiento, para priorizar la fiscalización. |
+
+## Aceptación de las historias
+
+Cada historia se acepta cuando satisface los criterios de sus RF asociados en la [matriz funcional](03-requisitos-funcionales.md#criterios-de-aceptación-funcional). HU05 y HU06 incluyen reinicio del dispositivo y reenvío de la misma operación; HU08 y HU09 incluyen acceso a expediente ajeno y vencimiento del plazo; HU04 incluye consulta sin token y exclusión de evidencias privadas. Son criterios de diseño, pendientes de ejecución sobre la aplicación.

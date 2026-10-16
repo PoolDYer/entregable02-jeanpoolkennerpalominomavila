@@ -11,3 +11,13 @@
 | **RC07** | Cumplimiento Normativo y Legal | El diseño del tratamiento de datos y almacenamiento de expedientes debe ajustarse estrictamente a las disposiciones de la Ley N° 29733 (Ley de Protección de Datos Personales en el Perú). |
 | **RC08** | Backend y persistencia institucional | Backend Node.js/NestJS, PostgreSQL primaria y réplica, Redis y RabbitMQ. |
 | **RC09** | Control de versiones | Documentación, código y fuentes de diagramas versionados con Git en el repositorio del proyecto. |
+
+## Parámetros institucionales y supuestos
+
+| Aspecto | Tratamiento en el diseño |
+|---|---|
+| Políticas de riesgo y plazos | Se almacenan versionadas. No se atribuyen ponderaciones ni plazos sancionadores específicos a la institución sin una regla aprobada. |
+| Retención de evidencias | La propuesta exige custodia duradera. El plazo concreto, acceso y disposición final se fijan con la política archivística y de datos personales. |
+| Presupuesto | No existe monto aprobado en la propuesta; AC08 exige estimar y contrastar consumo antes del despliegue. |
+| Dependencias externas | Acceso a API, cuotas, credenciales y capacidades de proveedores pendientes de validación técnica. |
+| Documentación de diseño | Las rutas de clases y módulos especifican la implementación prevista; este entregable contiene documentación y diagramas. |

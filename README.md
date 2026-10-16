@@ -1,31 +1,53 @@
-# Entregable 01
+# SIFITUR Huamanga · Entregable 02
 
-## nombre
-Jean Pool Kenner Palomino Mavila    
+## Nombre
+
+Jean Pool Kenner Palomino Mavila
 
 ## Descripción
-**SIFITUR Huamanga** (Sistema Integral de Fiscalización de Hospedajes y Servicios Turísticos en Huamanga) es una plataforma tecnológica institucional diseñada para modernizar, articular y transparentar el proceso integral de empadronamiento, inspección técnica in situ, control de vigencias documentales (licencias municipales, ITSE y constancias de MINCETUR) y seguimiento de subsanaciones en la provincia de Huamanga, en coordinación con la DIRCETUR Ayacucho y la Municipalidad Provincial de Huamanga. La solución articula un ecosistema multicanal compuesto por una aplicación móvil con soporte *offline-first* que permite a los inspectores levantar actas digitales con firmas manuscritas y capturar evidencias fotográficas con GPS forzado en zonas sin conectividad, una consola web administrativa para la planificación de operativos territoriales y evaluación de descargos, y un portal web ciudadano de acceso público orientado a resolver en menos de 200 ms la verificación de formalidad mediante el escaneo de sellos QR oficiales. Sustentada en una arquitectura desacoplada de cómputo sin estado (*stateless*), aceleración en memoria Redis, persistencia transaccional con réplicas de lectura, procesamiento asíncrono y almacenamiento redundante de objetos en S3, la plataforma está dimensionada para absorber picos estacionales de hasta 30,000 visitantes únicos durante festividades como Semana Santa e interoperar con plataformas clave del Estado (SUNAT, MINCETUR, OpenStreetMap y pasarelas de notificación), garantizando seguridad perimetral mediante control de acceso por roles (RBAC), auditoría inmutable en bitácoras *append-only* y estricto cumplimiento de la Ley N° 29733 de Protección de Datos Personales.
+
+Sistema Integral de Fiscalización de Hospedajes y Servicios Turísticos en Huamanga. Integra empadronamiento, control documental, planificación de operativos, inspección móvil offline, custodia de evidencias, emisión de actas, seguimiento de subsanaciones y consulta pública de formalidad mediante QR.
 
 ## Caso de estudio
-Sistema Integral de Fiscalización de Hospedajes y Servicios Turísticos en Huamanga (SIFITUR Huamanga)
+
+Fiscalización turística de DIRCETUR Ayacucho y la Municipalidad Provincial de Huamanga.
 
 ## Curso
-Arquitectura de Software
 
-## Documentación del laboratorio 03
+Arquitectura de Software · IS-488 · Universidad Nacional de San Cristóbal de Huamanga · 2026-II.
 
-Este repositorio contiene la propuesta documental de SIFITUR Huamanga. Las tecnologías, métricas y diagramas describen el diseño previsto; todavía no existe una aplicación ejecutable ni evidencia de cumplimiento de los objetivos de calidad.
+## Estructura
 
-| Entregable | Documento |
+```text
+docs/
+├── 01-analisis-de-sistema/
+├── 02-arquitectura-software/
+├── 03-diseño-de-software/diseño-interno/
+└── 04-modelo-c4/
+img/
+└── fuentes-svg/
+```
+
+## Documentación
+
+| Bloque | Archivos |
 |---|---|
-| Necesidad del negocio | [Problema, objetivos y alcance](analisis-de-sistema/00-necesidad-del-negocio.md) |
-| Requisitos | [Actores](analisis-de-sistema/01-actores.md), [historias de usuario](analisis-de-sistema/02-historias-del-usuario.md), [requisitos funcionales](analisis-de-sistema/03-requisitos-funcionales.md) y [restricciones](analisis-de-sistema/05-restricciones.md) |
-| Atributos de calidad | [Escenarios y objetivos](analisis-de-sistema/04-atributos-de-calidad.md) |
-| Drivers arquitectónicos | [Necesidades que condicionan el diseño](analisis-de-sistema/06-driver-arquitectonicos.md) |
-| Decisiones arquitectónicas | [ADR, alternativas y consecuencias](analisis-de-sistema/07-decisiones-arquitectonicas.md) |
-| Estilo arquitectónico | [Backend modular y estructura global](arquitectura/estilo-arquitectonico.md) |
-| Enfoque Clean Architecture | [Responsabilidades, estructura propuesta y dependencias](arquitectura/enfoque/enfoque-arquitectonico.md) |
+| Análisis | [Necesidad](docs/01-analisis-de-sistema/00-necesidad-del-negocio.md), [actores](docs/01-analisis-de-sistema/01-actores.md), [historias](docs/01-analisis-de-sistema/02-historias-del-usuario.md), [requisitos](docs/01-analisis-de-sistema/03-requisitos-funcionales.md). |
+| Calidad y decisiones | [Atributos](docs/01-analisis-de-sistema/04-atributos-de-calidad.md), [restricciones](docs/01-analisis-de-sistema/05-restricciones.md), [drivers](docs/01-analisis-de-sistema/06-driver-arquitectonicos.md), [decisiones](docs/01-analisis-de-sistema/07-decisiones-arquitectonicas.md), [escenarios](docs/01-analisis-de-sistema/08-escenarios-atributos-calidad.md). |
+| Arquitectura | [Inicial](docs/02-arquitectura-software/arquitectura-inicial.md), [componentes](docs/02-arquitectura-software/componentes-arquitectonicos.md), [enfoque](docs/02-arquitectura-software/enfoque-arquitectonico.md), [estilo](docs/02-arquitectura-software/estilo-arquitectonico.md). |
+| Diseño | [Diseño interno](docs/03-diseño-de-software/diseño-interno/diseño-interno-de-modulos.md), [patrones](docs/03-diseño-de-software/diseño-interno/patrones-de-diseño.md), [SOLID](docs/03-diseño-de-software/diseño-interno/principios-de-diseño.md). |
+| C4 | [Contexto](docs/04-modelo-c4/Nivel1-DiagramadeContextodelSistema.md), [contenedores](docs/04-modelo-c4/Nivel2-DiagramadeContenedores.md), [componentes](docs/04-modelo-c4/Nivel3-Diagrama-de-Componentes.md), [código](docs/04-modelo-c4/Nivel4-DiagramadeCodigo.md). |
 
-La [arquitectura inicial](arquitectura/arquitectura-inicial.md) se conserva como antecedente. El [informe de revisión](docs/revision-laboratorio-03.md) explica la correspondencia con la Guía 03, la equivalencia de requisitos entre la propuesta Word y el repositorio, y las observaciones pendientes de aclaración.
+## Arquitectura
 
-Los diagramas están escritos en Mermaid y pueden visualizarse en GitHub o en un visor Markdown compatible. El laboratorio se centra en analizar y justificar la arquitectura; no requiere desarrollar funcionalidades nuevas.
+Backend monolítico modular Node.js/NestJS con Clean Architecture. App Flutter con SQLite cifrada, consola y portal del administrado React, portal público Next.js, PostgreSQL primaria y réplica, Redis, S3 y RabbitMQ. Las integraciones externas son SUNAT, MINCETUR, OpenStreetMap y pasarela SMS/correo.
+
+![Contexto de SIFITUR Huamanga](img/nivel1-contexto.png)
+
+## Convenciones de lectura
+
+La documentación especifica la arquitectura propuesta de SIFITUR Huamanga. Los RF, AC, DA, ADR y EQ enlazan requisitos, calidad, drivers, decisiones y escenarios de aceptación. Las métricas son objetivos de diseño; la validación de una aplicación desplegada corresponde a la etapa de implementación.
+
+Los diagramas se publican en PNG para lectura y en [SVG editable](img/fuentes-svg/) para ampliación sin pérdida. Cada vista identifica su alcance, fronteras y leyenda. El proceso se desarrolla en el análisis; C4 permite navegar de personas y sistemas a contenedores, componentes y clases; el diseño interno detalla sincronización, emisión y estados del expediente.
+
+Base documental: Propuesta SIFITUR Huamanga; GUIA-004-ASF, laboratorio IS-488; estructura del [repositorio modelo](https://github.com/devlizbethjaico/Marketplace-arquitSoft-02). El alcance de esta entrega comprende documentación y diagramas.
