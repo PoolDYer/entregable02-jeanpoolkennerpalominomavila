@@ -88,7 +88,6 @@ La emisión no cambia por sí sola el estado de formalidad del establecimiento. 
 | Contratos y adaptadores | Adapter, Repository y DIP. |
 | Inspeccion.crear | Fábrica estática y validación centralizada. |
 | Entrada de sincronización | Facade de aplicación. |
-| Outbox y eventos del acta | Observer con entrega recuperable. |
 | Controlador, entidad, generador y notificador separados | Responsabilidad única y segregación de interfaces. |
 
 ## 5. Frontera entre ejecución y contratos
